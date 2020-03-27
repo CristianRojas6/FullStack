@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        /* 
+            Do while (estructura interativa)
+
+            El bucle se ejecuta al menos una vez, sin importar la condición que se va a evaluar
+
+            do{
+              bloque de código  
+            } while(condición)
+        
+
+        let i = 0;
+
+        do{
+            i++;
+            document.write(`Número ${i} <br>`);
+        } while (i < 10)
+        */
+
+        /* 
+        ----------------------Metodos o funciones para cadenas---------------------------
+
+        Objeto String
+        split - Romper una cadena a partir de determinado caracter
+        length
+        splice
+        toLowerCase - cadena a minusculas
+        toUpperCase - cadena a mayusculas
+        join
+        concat
+        chartAt - Traer caracter especifico
+        trim - Quitar el espacio en los extremos
+        repeat
+        str
+        substr - Extraer una subcadena desde un punto hasta determinada cantidad de caracteres
+        lastIndexOf - Ultima posición de caracter especifico
+        indexOf - Primer posisción de un caracter especifico
+        replace
+        
+
+        let cadena = prompt("Escribe una frase");
+
+        document.write(`Longitud de la cadena ${cadena.length} <br>`); 
+        document.write(`Frase en mayusculas ${cadena.toUpperCase()} <br>`);
+        document.write(`Frase en minusculas ${cadena.toLowerCase()} <br>`);
+        document.write(`Caracter en primer posición ${cadena.charAt(1)} <br>`); // cadena de String es un arreglo
+
+
+        let caracter = prompt("Escribe un caracter a buscar");
+        document.write(`<hr> <br> Posición de letra ${cadena.indexOf(caracter)} <br>`);
+        document.write(`Posición de la última letra ${cadena.lastIndexOf(caracter)} <br>`);
+        document.write(`${cadena.split("a")} <br>`);
+        document.write(`${cadena.replace("a", "f")} <br>`);
+        document.write(`${cadena.substr(5, 8)} <br>`);*/
+
+       /* ----------------------Metodos o funciones para arreglos---------------------------
+
+       join - Permite concadenar a partir de un simbolo o caracter
+       concat - Concadenar o unir dos o más arreglos
+       push - agregar datos a un arreglo, el arreglo siempre los pone en la ultima posición
+       splice - una porción del arreglo
+       shift - Elimina el dato que esta en posición 0
+       sort - Ordena un arreglo de mayor a menos o viceversa
+       unshift - Agregar datos en la posisción 0
+       map(ES6) **
+       reverse - Invertir el arreglo
+       pop - Eliminar el dato de la última posición del arreglo
+       find
+       
+
+       let array1 = ["A", "B", "C"];
+       let array2 = ["D", "E", "F"];
+       let groupA,
+           groupB,
+           inverso;
+
+        groupA = array1.concat(array2);
+        document.write(`${groupA} <br>`); //console.log()
+
+        groupB = groupA.join("-");
+        document.write(`${groupB} <br>`);
+
+        groupA.pop();
+        document.write(`${groupA} <br>`);
+
+        groupA.push("6");
+        document.write(`${groupA} <br>`);
+
+        groupA.shift()
+        document.write(`${groupA} <br>`);
+
+        groupA.unshift("Z");
+        document.write(`${groupA} <br>`);
+
+        inverso = groupA.reverse();
+        document.write(`${inverso} <br>`);
+
+        groupA.splice(2, 0, "K", "Y");
+        document.write(`${groupA} <br>`);*/
+
+        /* 
+        
+        Ejercicio
+        1) pedir al usuario x cantidad de datos numéricos. Se deben discriminar los ceros
+        que el usuario ingrese e imprimir únicamente en el html o en consola los datos
+        distintos a cero.
+
+        ej:
+        5
+        deben salir 5 prompt
+
+        2)Pedir al usuario que ingrese x cantidad de datos. Estos pueden ser numéricos
+        o caracteres. Validar que al ser caracter ingrese únicamente el primer
+        caracter de dicha cadena. Organizar los datos del usuario de menor a mayor
+        empezando por las letras y luego por los números.
+
+        ej:
+        Pepe
+        1
+        Kamilo
+        Carlos
+        10
+
+        P, 1, K, C, 10
+        C, K, P, 1, 10
+        
+        */
+
+        let ingreso = Number(prompt("Ingrese la cantidad de números"));
+        let objetos = 0;
+        let array1 = [];
+        let array0 = [];
+
+        function numObject(){
+
+                for(ingreso = 0; ingreso < 10; ingreso+1){
+                    while(ingreso <= 10){
+
+                        objetos = prompt("Ingresa el número que quieras");
+                    }
+                }
+
+        }
+        
+        numObject()
+        console.log(objetos);
+
+
+
+    </script>
+
+
+</body>
+</html>

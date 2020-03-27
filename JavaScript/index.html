@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 01 javascript</title>
+
+</head>
+<body>
+
+
+
+
+
+
+
+    <!-- <script src="prueba.js"></script> javascript referenciado -->
+
+    <script>
+        /* Lenguaje interpretado que se basa en programación orientada a prototipos
+           Es síncrono, es decir que tiene una cadena de ejecución secuencial
+           Función del lado del cliente (usuario - navegador)     
+           Devilmente tipado
+
+           var, let y const
+
+           var: se declara una variable de ambito global
+           let: variable de ambito local
+           const: se declara una constante
+
+           Tipos de datos
+              
+              String -> texto: let nombre = "Cristian" // edad = "10"
+              Number -> número: let edad = 10
+              Float -> decimales
+              Boolean -> verdadero o falso let activado = true
+                      
+        */
+
+        /* let nombre = "Cristian";
+
+        // prompt -> nos muestra una aleta con texto // metodo windows
+
+        nombre = prompt("Ingrese su nombre");
+
+        //alert -> ventana o popup con indicación o mensaje al usuario
+
+        alert("Hola " + nombre)
+        */
+         
+        //operaciones aritmeticos
+
+        /*
+        let x = 2;
+        let y = 7;
+        let suma = x + y; 
+        console.log("La suma es " + suma);
+        //template String -> ECMA script 6 (ES6)
+        alert(`La suma es de: 
+        ${suma}`);
+        */
+        /* 
+         resta = x - y
+         multiplicación = x * y 
+         división = x / y
+         residuo = x % y
+         x++ -> se aumenta un dato o un paso una variable
+         x+2
+         x-- -> se decrementa un dato o un paso una variable
+         x-2        
+        
+         
+
+         //operadores de asignación / comparativos o relacionales
+
+         let x = 2;
+         let y = "2";
+
+         document.write(`Variable x: ${x} <br> Variable y: ${y}`);
+
+         let mayor = x > y;
+         console.log(`Mayor: ${mayor}`);
+         let mayorIgual = x >= y;
+         console.log(`Mayor o Igual: ${mayorIgual}`);
+         let menor = x < y;
+         console.log(`Menor: ${menor}`);
+         let menorIgual = x <= y;
+         console.log(`Menor o Igual: ${menorIgual}`);
+         let igual = x == y;
+         console.log(`Igual - el mismo valor: ${igual}`);
+         let igualEstricto = x === y; 
+         console.log(`Mismo tipo de dato y mismo valor: ${igualEstricto}`);
+         let distinto = x != y;
+         console.log(`Los valores son diferentes: ${distinto}`);
+        */
+
+        //Operadores Lógicos
+
+        /*
+        let var1 = false;
+        let var2 = true;
+
+        // AND (y) simbolo ampersand &&
+        var resultado = var1 && var2;
+        alert(`El resultado AND: ${resultado}`);
+
+        
+           v && f = f
+           f && v = f
+           f && f = f
+           v && v = v
+        
+
+        //OR (o) simbolo pipe ||
+        var resultado = var1 || var2;
+        alert(`El resultado OR: ${resultado}`);
+
+         
+           v || f = v
+           f || v = v
+           f || f = f
+           v || v = v
+        
+        
+        //NOT (negación) signo de admiración !
+        var resultado = !var1;
+        alert(`El resultado NOT: ${resultado}`);
+
+         
+           !f = v
+           !v = f
+        */
+
+        //Estructuras de control
+
+        /* 
+        Permite al sistema trabajar con relación al tomar decisiones o selecciones del usuario
+        Se divide en:
+           -selectiva (control if-else)
+           -Multiple (control switch)
+           -Interactiva (for, while, do while)
+        */
+
+        //Control de flujo if (Estructura selectiva)
+        /* 
+        Si la condición se cumple, se ejecutará una determinada sentencia
+        Código spaguetti: Anidación de condicionales if/else
+
+        if(){
+            if(){
+                if(){
+
+                }
+            }
+        }
+
+        if(){
+           primer bloque de código
+        }else {
+           segundo bloque de código
+        }
+        */
+
+        /* let respuesta = prompt("Ingrese un número mayor a 5");//nos devuelve tipo String
+
+        //let num1 = respuesta.parseInt(respuesta) || Number(prompt()/respuesta)
+
+        //if "5" > 5
+        if(respuesta > 5){
+            alert("Buen trabajo");
+            if(respuesta != 6){
+                //Como estamos evaluando un valor que es distinto a 6, va a ejecutar el bloque else
+                alert("Perfecto");
+            } else{
+                alert("Esperabamos que el número fuese 6");
+            }
+        } else{
+            alert("No es un número mayor a 5");
+        } */
+
+        //switch (estructura de selección multiple)
+
+        /* 
+        Ejecuta cadena de sentencias siempre y cuando la condición 
+        se valide con los casos especificados en nuestro flujo switch
+        */
+
+        /* let opUser = prompt("Ingrese un número del 1 al 3");
+
+        switch(opUser){
+            case "1":
+                alert("Escogió número 1");
+                break;
+            case "2":
+                alert("Escogió número 2");
+                break;
+            case "3":
+                alert("Escogió número 3");
+                break;
+            default:
+                alert("No escogió un número válido");
+        } */
+
+        //Bucle for (Estructura interativa)
+        /* 
+          Iteración de arreglo de datos
+          Simplificar procesos
+          Manejo de eventos
+          Repetición de acciones, n cantidad de veces
+
+          iteración -> aunmento o decremento de un elemento (número de vueltas o veces que debe ejecutarse)
+          for(inicialización, delimitación, iteración){
+              bloque de código a ejecutar
+          }
+        */
+
+        /* for (i = 0; i <= 10; i++){
+            for(j = 0; j <= 10; j++){
+                let tabla = i * j
+                document.write(`${i} x ${j} = ${tabla} <br>`); 
+            }
+        } */
+
+        //Bucle while
+        /* 
+        Mientras se cumpla una condición, entrara a ejecutar una determinada sentencia.
+
+        Con el ciclo no sabemos la cantidad de iteraciones que debe hacer el bucle
+        y poder indicar en que momento debe salirse de la ejecución
+
+        while(condición){
+            ejecutar bloque de código
+        }
+        */
+
+        /* let i = 0;
+
+        while(i<11){
+            document.write(`Número: ${i} <br>`);
+            i++
+        } */
+
+        //Array 
+        /* 
+        Espacio en memoria que almacena gran cantidad de datos, estos datos se manejan
+        siempre desde la posición 0
+        */
+
+        let dias = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"];
+        for(i = 0; i < dias.length; i++){
+            document.write(`${dias[i]} <br>`);
+        }
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>
