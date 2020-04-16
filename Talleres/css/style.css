@@ -1,0 +1,18 @@
+
+.cambio {
+    height: 200px;
+    width: 245px;
+    margin: 2px;
+}
+
+div {
+    margin-top: 25px;
+    align-items: center;
+    text-align: center;
+}
+p{
+    font-size: 60px;
+}
+.per{
+    font-size: 20px;
+}

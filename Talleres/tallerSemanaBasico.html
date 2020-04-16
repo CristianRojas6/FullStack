@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+
+	<p>----------------------Punto 1---------------------- </p>
+
+	<h1>Positivo o negativo</h1>
+
+	<p id="numer">Tu número es: </p>
+	<button id="but">Escribir</button>
+
+	<p>----------------------Punto 2---------------------- </p>
+
+	<h1>Edades</h1>
+
+	<p id="total">La suma total de edades es: </p>
+	<p id="prom">El promedio de edades es: </p>
+	<button id="but2">Escribir</button>
+
+	<p>----------------------Punto 3---------------------- </p>
+
+	<h1>Cronometro</h1>
+
+	<div>
+		<span id="min">00</span>:<span id="seg">00</span><br>
+	</div>
+
+	<p>----------------------Punto 4---------------------- </p>
+
+	<h1>Vocales</h1>
+
+	<p id="A">Cantidad de A's: </p>
+	<p id="E">Cantidad de E's: </p>
+	<p id="I">Cantidad de I's: </p>
+	<p id="O">Cantidad de O's: </p>
+	<p id="U">Cantidad de U's: </p>
+	<button id="btt">Ingresar</button>
+
+
+	<p>----------------------Punto 5---------------------- </p>
+
+	<h1>Area de figuras</h1>
+
+	<p id="fig">Tu seleccionaste el: </p>
+	<p id="area">Su area es: </p>
+	<button id="bton">Escribir</button>
+
+	<p>----------------------Punto 7---------------------- </p>
+
+	<h1>Multiplos de 8</h1>
+
+	<p id="number"></p>
+	<button id="bton2">Mostrar</button>
+
+
+
+
+	<p>----------------------Punto 8---------------------- </p>
+	<div>
+		<button id="btn">Forma 1</button><br><br>
+		<button id="btn2">Forma 2</button><br><br>
+		<button id="btn3">Forma 3</button>
+	</div>
+
+
+
+
+	<script type="text/javascript">
+
+		//----------------------------------------Punto 1----------------------------------------
+
+		let posNeg = document.getElementById('but');
+		but.addEventListener('click', function () {
+
+			let nums = Number(prompt('Ingresa número por favor'));
+
+			if (nums > 0) {
+				document.getElementById('numer').innerHTML += `Positivo ${nums}`
+			} else {
+				document.getElementById('numer').innerHTML += `Negativo ${nums}`
+			}
+
+		})
+
+		//----------------------------------------Punto 2----------------------------------------
+
+		let edad = document.getElementById('but2');
+		but2.addEventListener('click', function () {
+
+			let personas = Number(prompt('Ingresa cuantas personas son'));
+			let suma = 0;
+			for (i = 0; i < personas; i++) {
+
+				let edades = Number(prompt(`Ingrese las edades ${i + 1} de ${personas}`));
+				suma += edades;
+
+			}
+			document.getElementById('total').innerHTML += `${suma}`;
+			document.getElementById('prom').innerHTML += `${(suma / personas).toFixed(1)}`;
+		})
+
+		//----------------------------------------Punto 3----------------------------------------
+		seg = 0;
+
+		function numero() {
+			seg++;
+			document.getElementById('seg').innerHTML = seg;
+
+			if (seg === 59) {
+
+				minInterval = setTimeout(min, 1000);
+				minInterval--
+				document.getElementById('min').innerHTML = minInterval;
+				clearInterval(intervalo);
+				document.getElementById('seg').value;
+			}
+		}
+		intervalo = setInterval(numero, 1000);
+
+		//----------------------------------------Punto 4----------------------------------------
+		let vocal = document.getElementById('btt');
+		btt.addEventListener('click', function () {
+
+			let palabra = prompt("Introduzca una palabra o texto");
+			let aC = 0;
+			let eC = 0;
+			let iC = 0;
+			let oC = 0;
+			let uC = 0;
+
+			for (var i = 0; i < palabra.length; i++) {
+
+
+				// Nota a aclarar: si hay más de una misma vocal aparecen los números seguidos
+				//por ejemplo: Cristian
+				//letras I:12
+				//no sé como corregirlo
+				switch (palabraIntroducida.charAt(i)) {
+
+					case "a":
+						aC++;
+						document.getElementById('A').innerHTML += aC;
+						break;
+
+					case "e":
+						eC++;
+						document.getElementById('E').innerHTML += eC;
+						break;
+
+					case "i":
+						iC++;
+						document.getElementById('I').innerHTML += iC;
+						break;
+
+					case "o":
+						oC++;
+						document.getElementById('O').innerHTML += oC;
+						break;
+
+					case "u":
+						uC++;
+						document.getElementById('U').innerHTML += uC;
+						break;
+
+					default:
+						break;
+				}
+
+			}
+		})
+
+
+		//----------------------------------------Punto 5----------------------------------------
+
+		let area = document.getElementById('bton');
+		bton.addEventListener('click', function () {
+
+			let figura = Number(prompt('Selecciona la figura 1: Cuadrado 2: Rectangulo 3: Triangulo 4: Circulo'))
+
+			switch (figura) {
+				case 1:
+
+					let alto = Number(prompt('Ingresa la altura'));
+					let ancho = Number(prompt('Ingresa la base'));
+					let area = alto * ancho
+
+					document.getElementById('fig').innerHTML += 'Cuadrado';
+					document.getElementById('area').innerHTML += `${area} cm2`;
+
+					break;
+				case 2:
+					let alto1 = Number(prompt('Ingresa la altura'));
+					let ancho1 = Number(prompt('Ingresa la base'));
+					let area1 = alto * ancho
+
+					document.getElementById('fig').innerHTML += 'Rectangulo';
+					document.getElementById('area').innerHTML += `${area1} cm2`;
+					break;
+				case 3:
+					let alto2 = Number(prompt('Ingresa la altura'));
+					let ancho2 = Number(prompt('Ingresa la base'));
+					let area2 = (alto2 * ancho2) / 2
+
+					document.getElementById('fig').innerHTML += 'Triangulo';
+					document.getElementById('area').innerHTML += `${area2} cm2`;
+					break;
+				case 4:
+					let radio = Number(prompt('Ingresa el radio del circulo'));
+					let area3 = Math.PI * Math.sqrt(radio);
+
+					document.getElementById('fig').innerHTML += 'Circulo';
+					document.getElementById('area').innerHTML += `${area3} cm2`;
+					break;
+				default:
+					alert("No escogió un número válido");
+			}
+		})
+
+		//----------------------------------------Punto 7----------------------------------------
+		let multiplo = document.getElementById('bton2');
+		bton2.addEventListener('click', function () {
+
+			function multiple(valor, multiplo) {
+				residuo = valor % multiplo;
+				if (residuo == 0)
+					return true;
+				else
+					return false;
+			}
+
+			// Arrays que contendran los valores multiples del 3 y del 5
+			var mul8 = [];
+
+			// bucle del 1 al 100
+			for (var i = 1; i <= 500; i++) {
+				if (multiple(i, 8))
+					mul8.push(i);
+			}
+			document.write("Los multiplos de 8 son: ", mul8);
+		});
+
+		//----------------------------------------Punto 8 ----------------------------------------
+        /* Definimos las variables para la ubicacion de
+			las filas y las columnas */
+		var columna = new Number();
+		var fila = new Number();
+		fila = 0;
+		columna = 0;
+		// Definimos la dimension de la matriz en donde se vana a imprimir las figuras
+		// primero las columnas y luego las filas
+		var letras = new Array(9); for (var i = 0; i < 9; i++) { letras[i] = new Array(9); }
+
+		let formas = document.getElementById('btn');
+		btn.addEventListener('click', function () {
+
+			// Ubicacion en columna y fila de los puntos para dar forma
+			// [columna, fila]
+			letras[0][0] = "*";
+			letras[0][1] = "*";
+			letras[0][2] = "*";
+			letras[0][3] = "*";
+			letras[0][4] = "*";
+			letras[0][5] = "*";
+			letras[0][6] = "*";
+			letras[0][7] = "*";
+			letras[0][8] = "*";
+			// Basicamente es realizar las veces que sean necesarias 
+			// (segun el numero de columnas que queremos hacer)
+			letras[1][0] = " ";
+			letras[1][1] = "*";
+			letras[1][2] = "*";
+			letras[1][3] = "*";
+			letras[1][4] = "*";
+			letras[1][5] = "*";
+			letras[1][6] = "*";
+			letras[1][7] = "*";
+			letras[1][8] = " ";
+			// Los diez caracteres son las posiciones en las filas
+			letras[2][0] = " ";
+			letras[2][1] = "*";
+			letras[2][2] = "*";
+			letras[2][3] = "*";
+			letras[2][4] = "*";
+			letras[2][5] = "*";
+			letras[2][6] = "*";
+			letras[2][7] = "*";
+			letras[2][8] = " ";
+
+			letras[3][0] = " ";
+			letras[3][1] = " ";
+			letras[3][2] = "*";
+			letras[3][3] = "*";
+			letras[3][4] = "*";
+			letras[3][5] = "*";
+			letras[3][6] = "*";
+			letras[3][7] = " ";
+			letras[3][8] = " ";
+
+			letras[4][0] = " ";
+			letras[4][1] = " ";
+			letras[4][2] = "*";
+			letras[4][3] = "*";
+			letras[4][4] = "*";
+			letras[4][5] = "*";
+			letras[4][6] = "*";
+			letras[4][7] = " ";
+			letras[4][8] = " ";
+
+			letras[5][0] = " ";
+			letras[5][1] = " ";
+			letras[5][2] = " ";
+			letras[5][3] = "*";
+			letras[5][4] = "*";
+			letras[5][5] = "*";
+			letras[5][6] = " ";
+			letras[5][7] = " ";
+			letras[5][8] = " ";
+
+			letras[6][0] = " ";
+			letras[6][1] = " ";
+			letras[6][2] = " ";
+			letras[6][3] = "*";
+			letras[6][4] = "*";
+			letras[6][5] = "*";
+			letras[6][6] = " ";
+			letras[6][7] = " ";
+			letras[6][8] = " ";
+
+			letras[7][0] = " ";
+			letras[7][1] = " ";
+			letras[7][2] = " ";
+			letras[7][3] = " ";
+			letras[7][4] = "*";
+			letras[7][5] = " ";
+			letras[7][6] = " ";
+			letras[7][7] = " ";
+			letras[7][8] = " ";
+
+			letras[8][0] = " ";
+			letras[8][1] = " ";
+			letras[8][2] = " ";
+			letras[8][3] = " ";
+			letras[8][4] = "*";
+			letras[8][5] = " ";
+			letras[8][6] = " ";
+			letras[8][7] = " ";
+			letras[8][8] = " ";
+
+
+			// Ahora con un for damos un rango(columnas)hasta cuando (# de columnas) cada cuanto tiempo 
+			for (columna = 0; columna <= 8; columna++) {
+				// Con un Para anidado damos un rango(filas) hasta cuando (# de filas) cada cuanto tiempo
+				for (fila = 0; fila <= 8; fila++) {
+					// Se imprime el resultado de la matriz sin saltar y con un espacio
+					document.write(letras[fila][columna]);
+				}
+				// Se imprime este espacio para dar la forma cuadrada de matriz y que no aparezcan en la misma linea
+				document.write(" ", '<BR/>');
+			}
+		})
+
+		let formas2 = document.getElementById('btn2');
+		btn2.addEventListener('click', function () {
+
+			letras[0][0] = "*";
+			letras[0][1] = "*";
+			letras[0][2] = "*";
+			letras[0][3] = "*";
+			letras[0][4] = "*";
+			letras[0][5] = "*";
+			letras[0][6] = "*";
+			letras[0][7] = "*";
+			letras[0][8] = "*";
+			// Basicamente es realizar las veces que sean necesarias 
+			// (segun el numero de columnas que queremos hacer)
+			letras[1][0] = "*";
+			letras[1][1] = "*";
+			letras[1][2] = "*";
+			letras[1][3] = "*";
+			letras[1][4] = " ";
+			letras[1][5] = "*";
+			letras[1][6] = "*";
+			letras[1][7] = "*";
+			letras[1][8] = "*";
+			// Los diez caracteres son las posiciones en las filas
+			letras[2][0] = "*";
+			letras[2][1] = "*";
+			letras[2][2] = "*";
+			letras[2][3] = "*";
+			letras[2][4] = " ";
+			letras[2][5] = "*";
+			letras[2][6] = "*";
+			letras[2][7] = "*";
+			letras[2][8] = "*";
+
+			letras[3][0] = "*";
+			letras[3][1] = "*";
+			letras[3][2] = "*";
+			letras[3][3] = " ";
+			letras[3][4] = " ";
+			letras[3][5] = " ";
+			letras[3][6] = "*";
+			letras[3][7] = "*";
+			letras[3][8] = "*";
+
+			letras[4][0] = "*";
+			letras[4][1] = "*";
+			letras[4][2] = "*";
+			letras[4][3] = " ";
+			letras[4][4] = " ";
+			letras[4][5] = " ";
+			letras[4][6] = "*";
+			letras[4][7] = "*";
+			letras[4][8] = "*";
+
+			letras[5][0] = "*";
+			letras[5][1] = "*";
+			letras[5][2] = " ";
+			letras[5][3] = " ";
+			letras[5][4] = " ";
+			letras[5][5] = " ";
+			letras[5][6] = " ";
+			letras[5][7] = "*";
+			letras[5][8] = "*";
+
+			letras[6][0] = "*";
+			letras[6][1] = "*";
+			letras[6][2] = " ";
+			letras[6][3] = " ";
+			letras[6][4] = " ";
+			letras[6][5] = " ";
+			letras[6][6] = " ";
+			letras[6][7] = "*";
+			letras[6][8] = "*";
+
+			letras[7][0] = "*";
+			letras[7][1] = " ";
+			letras[7][2] = " ";
+			letras[7][3] = " ";
+			letras[7][4] = " ";
+			letras[7][5] = " ";
+			letras[7][6] = " ";
+			letras[7][7] = " ";
+			letras[7][8] = "*";
+
+			letras[8][0] = "*";
+			letras[8][1] = " ";
+			letras[8][2] = " ";
+			letras[8][3] = " ";
+			letras[8][4] = " ";
+			letras[8][5] = " ";
+			letras[8][6] = " ";
+			letras[8][7] = " ";
+			letras[8][8] = "*";
+
+
+			// Ahora con un for damos un rango(columnas)hasta cuando (# de columnas) cada cuanto tiempo 
+			for (columna = 0; columna <= 8; columna++) {
+				// Con un Para anidado damos un rango(filas) hasta cuando (# de filas) cada cuanto tiempo
+				for (fila = 0; fila <= 8; fila++) {
+					// Se imprime el resultado de la matriz sin saltar y con un espacio
+					document.write(letras[fila][columna]);
+				}
+				// Se imprime este espacio para dar la forma cuadrada de matriz y que no aparezcan en la misma linea
+				document.write(" ", '<BR/>');
+			}
+		})
+
+		let formas3 = document.getElementById('btn3');
+		btn3.addEventListener('click', function () {
+			//nota: No pude hacer que la piramide saliera al revez
+
+			let cadena = "* ";
+			let piramide = "";
+			let num = Number(prompt('Ingresa el tamaño de la piramide'));
+
+			for (i = num; i >= 1; i--) {
+				piramide += cadena;
+				document.write(piramide + "<br>");
+			}
+		})
+	</script>
+</body>
+
+</html>

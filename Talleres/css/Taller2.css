@@ -1,0 +1,42 @@
+div {
+    width: 100px;
+    height: 100px;
+    background-color: magenta;
+    display: inline-block;
+    margin: 10px;
+    border: 1px solid #aaaaaa;
+    border-radius: 10%;
+}
+
+p {
+    text-align: center;
+    line-height: 40px;
+    font-size: 30px;
+}
+
+.botones {
+    width: 100px;
+    height: 50px;
+    background-color: greenyellow;
+    display: inline-block;
+    margin: 10px;
+    border: 2px solid red;
+    border-radius: 10px;
+}
+
+#principal {
+    visibility: hidden;
+}
+
+img {
+    width: 200px;
+    height: 300px;
+    display: inline-block;
+    transition: 1.5s ease;
+    -webkit-transition: 1.5s ease;
+}
+
+img:hover {
+    transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+}

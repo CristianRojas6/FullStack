@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        class Carro{
+
+            constructor(marca, modelo, kilometraje){
+                this.marca = marca;
+                this.modelo = modelo;
+                this.kilometraje = kilometraje
+            } 
+
+            condicion(){
+                return `El carro es: ${this.marca} <br> El modelo es: ${this.modelo} <br> Su kilometraje es: ${this.kilometraje} <br>`
+            }
+
+        }
+
+        //let carro = new Carro('Lamborghini', 'Aventador SVJ Roaster', '350km/h');
+        //document.write(carro.condicion());
+
+        class Conductor extends Carro{
+            constructor(marca, modelo, kilometraje, colorCarro, nomCond){
+                super(marca, modelo, kilometraje);
+                this.colorCarro = colorCarro;
+                this.nomCond = nomCond;
+            }
+
+            condicion(){
+                return `${super.condicion()} El carro es de color: ${this.colorCarro} <br> El nuevo dueño es: ${this.nomCond}`
+            }           
+        }
+
+        let conductor = new Conductor('Lamborghini', 'Aventador SVJ Roaster', '350km/h', 'Rojo', 'Enrique');
+        document.write(conductor.condicion());
+
+    </script>
+</body>
+</html>
