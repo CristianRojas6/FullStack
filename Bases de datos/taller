@@ -1,0 +1,59 @@
+
+
+La tienda de ropa 
+usuarios - control de aadministrador (superadmin - admin)
+productos - categoria - subcategoria
+
+chaquetas
+	drill
+	cuerina
+	camufladas
+camisas
+	estampados
+	sin estampado
+leggins
+	algodón
+	cuerina
+	drill
+botas
+	altas
+	medianas
+	taches
+
+
+
+
+producto
+	idProducto
+	nombreproducto
+	precio
+	imgproducto
+	descripcion
+	idcategoria
+	idsubcategoria
+	idestado
+categoria
+	idcategoria
+	categoria
+	idestado
+subcategoria
+	idsubcategoria
+	subcategoria
+	idcategoria
+	idestado
+usuario
+	idUsuario
+	nombre
+	apellido
+	correo
+	contraseña
+	idestado
+	idrol
+rol
+	idRol
+	rol
+estado
+	idestado
+	estado
+
+Star UML

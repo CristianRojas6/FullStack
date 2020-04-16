@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+</head>
+<body>
+
+
+    <!-- <div id="prueba">
+
+        <input type="text" id="dato" />
+        <input type="text" id="edad" />
+        <button id="btn">Enviar</button>
+
+    </div>
+
+    <p id="result">Hola </p>
+    -->
+    <script>
+        /* 
+            ----------------JSON JavaScript Object Notation----------------------
+            Json - Objeto de tipo literal 
+            class Objeto {} // new Objeto() - Objeto construido
+            
+            Formato de texto ligero que nos permite enviar datos, compartirlos
+            Esta es la forma en la cual viajan  los metadatos en una petición 
+            y en una respuesta
+            {"clave":"valor", "clave2":"valor2"}
+
+            correo@correo.com / 123456 - facebook = {'correo':'correo@correo.com', 'pass':'123456'}
+
+            el Json viaja al servidor, valida la BD y la estructura backend de una aplicación 
+
+            Bienvenido Pepe - Vista Home en Facebook {'nombreUsuario':'Pepe', 'img':'kjhaskjhask.png'}
+        */
+
+        let datosJson = {
+            'instituto' : 'Bictia',
+            'instructor' : 'Kamilo',
+            'Alumnos' : 23,
+            'Empresa' : 'Rappi'                
+        }
+
+        console.log(datosJson);
+        
+        //Acceder a un valor de una clave json
+        //variable.clave  /variable['clave']
+        document.getElementById('prueba').innerHTML += datosJson.instituto 
+
+        /* 
+            convertir a objeto literal a JSON
+                JSON.parse(dato);
+            convertir json a string 
+                JSON.stringify(dato);
+        */
+
+        let btn = document.getElementById('btn');
+        btn.addEventListener('click', function(){
+            datosUsr = {};
+            let nombreUsuario = document.getElementById('dato').value;
+            let edadUsuario = document.getElementById('edad').value;
+
+            datosUsr.nombre = nombreUsuario;
+            datosUsr.edad = edadUsuario;
+
+            //crear localStorage
+            localStorage.setItem('usuario', JSON.stringify(datosUsr));
+
+            //Obtener dato de localStorage
+            let datosJson = JSON.parse(localStorage.getItem('usuario'));
+            document.getElementById('result').innerHTML += datosJson.nombre
+        });
+
+        /* 
+            ------------------Ejercicio--------------
+            Crear los siguientes botones:
+
+            **Boton para agregar un nuevo dato a un Json
+            **Bton a modificar un dato del Json
+
+            Buen estilo CSS / Debe ser del tema que deseen
+        */
+
+    </script>
+    
+</body>
+</html> 

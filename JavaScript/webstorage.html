@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id = 'prueba'>
+        hola
+    </div>
+
+    <script>
+        /* 
+           --------------webstorage--------------
+           Forma de almacenamiento mucho más robusta, potente y seguro que las cookies
+           Se divide en: 
+                LocalStorage - Almacenar datos sin fecha de caducidad
+                SessionStorage - Almacenar datos para una sola sesión 
+            Mínimo de 5MB de memoria del navegador 
+        */
+        // verificar si el navegador soporta webStorage
+        if(typeof(Storage) !== 'undefined'){
+            alert('soporte LS');
+
+            //crear elemento de localstorage o sessionStorage
+            //setItem('clave', 'valor')
+
+            localStorage.setItem('nombre', 'Bictia');
+            
+            //consultar un elemento de localStorage
+            alert(localStorage.getItem('nombre'));
+            document.getElementById('prueba').innerHTML += localStorage.getItem('nombre');
+
+            //Eliminar el elemento del localStorage
+            alert(localStorage.removeItem('nombre'));
+        } else{
+            alert('No soporta LS');
+        }
+
+        //Operadores terniarios() ? :
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

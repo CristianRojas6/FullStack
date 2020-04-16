@@ -1,0 +1,88 @@
+RELACION DE TABLAS (MER - Modelo Entidad Relación)
+
+Existen tres tipos de relaciones
+
+1) Relación Uno a Uno (1 : 1)
+	Cuando un registro esta relacionado con otro elemento de una segunda tabla
+	y este registro de la segunda tabla corresponde únicamente al elemento
+	de la primer tabla, estando correlacionados de forma exclusiva.
+
+	ej: Una persona solo tiene un número de cédula
+		El número de cédula corresponde únicamente a una persona
+
+	Es la menos utilizada salvo para temas de restricciones o permisos
+
+
+2) Relación Uno a Muchos (1 : N)
+	Un registro esta relacionado con otro de la segunda tabla pero
+	este elemento de la segunda tabla puede estar relacionado con más
+	registros de la primer tabla
+
+	ej. Un estudiante pertenece a un curso de Bictia pero un curso 
+	de Bictia puede tener varios estudiantes
+
+3) Relación Muchos a Muchos (N : N)
+	Cada registro en la primer tabla se puede asociar a varios registros
+	de la segunda tabla y cada registro de la segunda tabla se puede asociar
+	a más de un registro de la primer tabla.
+
+	ej. Un salon puede tener diferentes profesores y un profesor puede
+	dictar clase a distintos salones
+
+
+TIPOS DE RESTRICCIONES
+	restrict - Por defecto, impide realizar modificaciones o eliminaciones
+			que atenten contra la identidad de los datos de otra tabla
+
+	cascade - Borrar o modificar los registros de la tabla A cuando detecta la
+		eliminación o alteración del campo de la tabla B. Similar a un concepto de 
+		herencia.
+
+	set NULL - al eliminar el registro de una tabla A, los registros o elementos
+		que dependen de éste, cambiaran su valor a NULL, permaneciendo
+		aún en la BD consumiendo memoria.
+
+	no action - No compromete la integridad de los datos dependen de una llave foránea.
+
+Comentarios en MySQL /* */
+
+
+//Crear base de datos
+CREATE DATABASE nueva_db CHARACTER SET utf8 COLLATE utf8_unicode_ci
+
+//modificar base de datos
+ALTER DATABASE nueva_db DEFAULT CHARSET=utf8 COLLATE utf8_unicode_ci
+
+Las relaciones entre tablas se realizan por medio de llaves foráneas. Una llave foránea
+apunta a una llave primaria de una segunda tabla establaciendo un puente o una unión
+entre abás tablas  compartiendo sus datos. PK (Primary Key) - FK (Foreign Key).
+
+//referenciar llaves
+ALTER TABLE tabla1 ADD CONSTRAINT fk_nombredelallave FOREIGN KEY (id_tabla1) REFERENCES tabla2 (id_tabla2) ON DELETE CASCADE ON UPDATE CASCADE;
+
+
+
+A la hora de hacer consultas multitabla, debemos dar un alias a las tablas con las cuales
+queremos interactuar.
+Existen cuatro formas de unir las tablas para una consulta
+	INNER JOIN
+	RIGHT JOIN
+	LEFT JOIN
+	UNION
+
+//Consulta dentro de otra Consulta
+SELECT * FROM estudiantes_bictia AS eb INNER JOIN cursos_bictia AS cb ON eb.idClase = cb.idCurso;
+
+
+//Consulta de condicion
+SELECT CONCAT (eb.nombre,' ', eb.apellido) AS nombre_completo, cb.nombre FROM estudiantes_bictia AS eb INNER JOIN cursos_bictia AS cb ON eb.idClase = cb.idCurso WHERE eb.idClase = 2
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eventos</title>
+</head>
+<body>
+
+    <input type="text" id="entry">
+    <button id="btn">Enviar</button>
+
+    <script>
+        /* 
+        Eventos 
+          interacción del usuario con el aplicativo
+        */
+
+        function dinombre(){
+            let nombreUsr = document.getElementById("entry").value;
+            alert(`Hola ${nombreUsr}`)
+        }
+
+        function estado(){
+            document.write(`¿Cómo estas?`)
+        }
+
+        let boton = document.getElementById('btn'); // metodo addEventListener
+        //variable.metodo('evento'); //clic, mouseOver, mouseSwamp, load, dbclic
+        boton.addEventListener('click', dinombre);
+        boton.addEventListener('click', estado);
+
+    </script>
+    
+</body>
+</html>

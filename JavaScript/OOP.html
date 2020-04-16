@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP: Programación Orientada a Objetos</title>
+</head>
+<body>
+
+    <script>
+        /* 
+           POO -> representación en código de objetos de la vida real
+                  siendo esto acciones programadas para que el
+                  aplicativo, servidor, ordenador, etc, pueden
+                  interpretarlos y ejecutarlos.
+
+                  Clase = Objeto que vamos a crear
+                          Inicio siempre en mayusculas.
+            
+            Gracias a ES6 y sus mejoras con ES7 ya se puede utilizar a JS como POO
+
+
+            Programación Orientada a Prototipos
+
+            function Persona(nombre){
+                this.nombre = nombre
+            }
+            
+            Persona.prototype.presentar = function(){
+                código a ejecutar?
+            }
+        */
+
+        class Persona{
+            //constructor -> Se va a inicializar cuando invoquemos a la clase
+            //Contiene las caracteristiacas del objeto o clase
+
+            constructor(nombre, apellido, profesion){
+                this.nombre = nombre; 
+                this.apellido = apellido;
+                this.profesion = profesion;
+
+                //this.conraseña = request.params.contraseña;
+            }
+
+            //metodo -> funcion propia de una clase (objeto)
+            presentar(){
+
+                return `Mi nombre es: ${this.nombre} ${this.apellido} y soy ${this.profesion}`
+            }
+        }
+
+        /* 
+        Para poder utilizar un objeto o una clase usamos la instancia
+        Guardar una variable como un nuevo objeto
+        Se recomienda que la variable tenga el mismo nombre del objeto en minuscula       
+        */
+
+        /* let persona = new Persona('Pepe', 'Pepito', 'Medico');
+        console.log(typeof(persona));
+        //document.write(persona.presentar());
+
+        let persona2 = new Persona('Sebastian', 'Velasquez', 'Estudiante');
+        document.write(saludar() + persona2.presentar()); */
+
+        function saludar(){
+            let saludo = "Hola, Buenos días "
+            return (saludo)
+        }
+
+
+        class Edad extends Persona{
+            constructor(nombre, apellido, profesion, edad){
+                super(nombre, apellido, profesion);
+                this.edad = edad;
+            }
+
+            presentar(){
+                return `${super.presentar()} y tengo ${this.edad}`;
+            }
+        }
+
+        let estudiante = new Edad('Daniel', 'Sanchez', 'Estudiante', 19);
+        document.write(estudiante.presentar());
+
+
+        /* 
+            class String(){
+                constructor(string){
+                    this.string;
+                }
+
+                split(){
+                    bloque de código
+                }
+
+                toLowerCase(){
+
+                }
+
+                toUpperCase(){
+
+                }
+            }
+
+            let cadena = new String('Buenos días');
+            cadena.split();
+        */
+
+
+        /* 
+        Crear un objeto carro que tenga las siguientes caracteristicas: Marca, modelo, kilometraje
+        Crear un nuevo objeto Conductor que herede las caracteristicas de carro
+        Color del carro y nombre del conductor
+        
+        */
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

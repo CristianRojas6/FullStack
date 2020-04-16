@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        /* --------------------cookies------------------
+           Archivo txt que contiene datos de preferencia de un usuario.
+           Tamaño máximo de 4bytes, que permite hatsa 50 cookies por dominio
+           3000 por navegador. Se guarda en la memoria cache.
+
+           A la hora de crear una cookie, ésta siempre debe tener un nombre.
+           Tambien puede tener una fecha de expiración, formato UTC (Formato estandar 
+           que regula la zona horaria), podemos especificar ruta, dominio,
+           tiempo de vida especificados en segundos.
+
+           Si la cookie no tiene fecha de expiración, se muere, fallece, se destruye una vez
+           el usuario haya cerrado el navegador.
+
+           Su estructura se vasa en clave y valor 
+           document.cookie = "clave = valor; expires = Fri 03 Apr 10:00:00 UTC"
+        */
+
+        document.cookie = "usuario = Bictia;";
+        document.cookie = "nombre = Carlos;"
+
+        //leer cookie 
+        let infoCookie = document.cookie;
+        alert(infoCookie); // console.log(typeof())
+        console.log(typeof(infoCookie));
+
+        //Modificar una cookie
+        //debemos tener en cuenta que debemos agregar todas las claves ya existen en su momento
+        //de creación
+
+        document.cookie = "usuario = aceleradora e incubadora de proyectos;"
+        alert(document.cookie);
+
+        //Eliminar una cookie
+        //Dejamos la clave del nombre vacio y damos una fecha de expiración del 01 de Enero de 1970
+        document.cookie = "usuario =; expires = Thu 01 Jan 1970 00:00:01 UTC";
+        alert(document.cookie);
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

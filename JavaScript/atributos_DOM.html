@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar atributos Dom</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: #dddddd;
+            display: inline-block;
+            margin-right: 10px;
+            border: 1px solid #aaaaaa;
+        }
+
+        .azul{
+            background-color: #0000ff;
+            border: 1px solid #000000;
+        }
+
+        .rojo{
+            background-color: #ff0000;
+            border: 1px solid #000000;            
+        }
+
+        .verde{
+            width: 1000px;
+            background-color: green;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <section id="contenedor">
+        <div class=""></div>
+        <div class=""></div>
+    </section>
+
+    <script>
+        let elemento = document.createElement('div');
+        //Buscar el padre de los elementos por medio del ID
+        let padre = document.getElementById('contenedor');
+        //creamos el nodo de referencia
+        let ref = document.getElementsByTagName('div')[0];
+        //Agregar el elemento a la posición que deseamos
+        padre.insertBefore(elemento, ref);
+
+        /* 
+            setAttribute() a partir de este método podemos agregar atributos
+            a unelemento creado por el DOM
+            variableElemento.setAttribute('atributo', 'valor atributo')
+        */
+
+        elemento.setAttribute('class', 'azul'); // <div class = "azul">
+
+        /* 
+          ---------------------Cambiar atributo a un elemento-------------------------
+        */
+
+        elemento.className = "rojo verde";
+        //elemento.classList.add('rojo', 'verde', otros colores);
+
+        /* 
+          ---------------------Eliminar una clase-------------------------
+        */
+
+        elemento.classList.remove('verde');
+        //elemento.className = " ";
+
+        /* 
+           pedir al usuario que ingrese una palabra por cada letra del abecedario,
+           el texto se va a guardar y debe verse en un div en el HTML.
+           Debe existir un contador que se debe visualizar en la parte superior 
+           derecha del div.
+
+           Los colores de fondo del div y el color de texto deben ser generados
+           de forma aleatoria ya que ningun div  debe tener los mismos estilos.
+           Todos usando el DOM y funciones.
+        */
+
+
+    </script>
+    
+</body>
+</html>

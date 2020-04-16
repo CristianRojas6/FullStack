@@ -1,0 +1,200 @@
+Al momento de la creación de una BD debemos tener en cuenta las buenas prácticas
+	- No debe ser nombrada utilizando mayúscula, ni usando el standar de camelCase
+	- Se deben separar las palabras por medio de underscore (guión al piso _ )
+
+nombre BD -> clase_bictia
+utf8_unicode_ci
+
+El formato utf8_unicode_ci hace referencia al formato de los caracteres que soportará
+la BD siendo utf8_unicode la que aceptará acentos como tildes y ñ para los valores
+de los campos de la tabla.
+
+
+
+TIPOS DE DATO
+	INT - Integer (datos numéricos enteros)
+	DECIMAL - datos numéricos decimales
+	VARCHAR - Variable Character (variables de caracteres) 255
+	DATE - fecha (se especifica siempre la fecha con 4 digitos para el año
+			dos para el mes y dos para el día separando cada grupo por guión
+			2020-04-14)
+	DATETIME - fecha y hora
+	TEXT - texto plano 65.5000 caracteres válido para txt plano como post o comments
+	BLOB - 65.5000 caracteres (ideal para guardar imagenes o archivos multimedia
+					en formato de base64)
+
+base64 - encriptación o hash de una cadena de forma alfanumérica que mimefica o comprime
+	el peso de un determinado archivo.
+mdc5 - encriptación alfanumérica para proteger datos, ideal para contraseñas.
+
+
+
+
+// crear tabla
+CREATE TABLE estudiantes(
+	idEstudiante 		INT AUTO_INCREMENT NOT NULL,
+	nombre			VARCHAR(255),
+	apellido		VARCHAR(255),
+	edad			INT
+);
+
+Las buenas prácticas indican que el nombre de la tabla debe ser en plural.
+
+
+guardar la img en formato base64 - QWERTYUILKJN2345678OQWERTYU6.png
+guardar la ruta donde se guarda la img /assets/img/logo.png
+
+
+C - Create (INSERT INTO) registrar
+R - Read (SELECT) consultar / buscar
+U - Update (UPDATE) actualizar un registro
+D - Delete (DELETE) eliminar un registro
+
+
+----------------- AGREGAR DATOS ----------------------------------------------
+
+// agregar datos - solo valores
+INSERT INTO estudiantes VALUES (NULL, 'Kamilo', 'Munevar', 28);
+
+// agregar campos especificos
+INSERT INTO estudiantes (nombre, apellido, edad) VALUES ('Johanna', 'Perez', 20);
+
+// agregar varios registros
+INSERT INTO estudiantes (nombre, apellido, edad) 
+	VALUES ('Cristian', 'Sanchez', 22), ('Duvan', 'Garzon', 23);
+
+
+
+
+
+
+----------------- CONSULTAR DATOS -------------------------------------------
+
+// Consultar todos los datos de una tabla
+SELECT * FROM estudiantes;
+
+
+// consultar los datos de una columna en especifico
+SELECT nombre FROM estudiantes;
+
+
+// Consultar un registro en especifico
+SELECT * FROM estudiantes WHERE nombre='Lorena';
+
+
+// consultar y unir valores de diferentes campos
+SELECT CONCAT(nombre, ' ', apellido) AS nombre_completo FROM estudiantes;
+
+
+// filtrar consultar menor a
+SELECT nombre FROM estudiantes WHERE edad<20;
+
+
+// filtrar consultar menor o igual a
+SELECT nombre FROM estudiantes WHERE edad<=20;
+
+
+// filtrar consultar mayor a
+SELECT nombre FROM estudiantes WHERE edad>20;
+
+
+// filtrar consultar mayor o igual a
+SELECT nombre FROM estudiantes WHERE edad>=20;
+
+
+// filtrar rango de datos numéricos
+SELECT * FROM estudiantes WHERE edad BETWEEN 20 AND 23;
+
+
+// filtrar rango de datos alfabéticos
+SELECT * FROM estudiantes WHERE edad BETWEEN 'a' AND 'z';
+
+
+// ordenar de forma ascendente
+SELECT * FROM estudiantes ORDER BY nombre ASC;
+
+
+// ordenar de forma descendente
+SELECT * FROM estudiantes ORDER BY nombre DESC;
+
+
+// traer datos que no sean iguales a
+SELECT nombre FROM `estudiantes` WHERE edad !=20; 
+
+
+// filtrar a partir de caracteres al inicio de una cadena
+SELECT * FROM `estudiantes` WHERE nombre LIKE 'Ca%';
+
+
+// filtrar a partir de caracteres al final de una cadena
+SELECT * FROM `estudiantes` WHERE nombre LIKE '%Ca';
+
+
+// filtracion que contenga una determinada cadena de caracteres en una cadena de texto
+SELECT * FROM `estudiantes` WHERE nombre LIKE '%ca%';
+
+
+// cantidad de registros existentes
+SELECT COUNT(nombre) FROM estudiantes;
+
+
+// filtrar a partir de dos o más condiciones donde todas las condiciones sean verdaderas
+SELECT * FROM estudiantes WHERE nombre='Duvan' AND edad=23;
+
+
+// filtrar a partir de dos o más condiciones donde alguna de las condiciones sea verdadera
+SELECT * FROM estudiantes WHERE nombre='Duvan' OR edad=23;
+
+
+
+
+
+--------------------- ACTUALIZAR DATOS -----------------------------------------
+
+// actualizar datos
+UPDATE estudiantes SET nombre='Andres' WHERE idEstudiante=1;
+
+
+// actualizar varios campos de un registro
+UPDATE estudiantes SET nombre='Andrea', apellido='Montenegro' WHERE idEstudiante=7;
+
+
+
+------------------------- ELIMINAR DATOS -----------------------------------
+
+// eliminar un registro
+DELETE FROM estudiantes WHERE idEstudiante=8;
+
+
+
+
+
+--------------- CONSULTAR BD --------------------------
+(aplica para MySQL Workbench - ambiente de trabajo para escritorio)
+
+// consultar las BD creadas
+SHOW DATABASES;
+
+
+// consultar las tablas de una determinada BD
+SHOW TABLE;
+
+
+// consultar columnas de una tabla
+SHOW COLUMNS FROM estudiantes;
+
+
+// crear BD
+CREATE DATABASE clase_bictia;
+
+
+// usar BD
+USE clase_bictia;
+
+
+// eliminar tabla
+DROP TABLE estudiantes;
+
+
+// eliminar BD
+DROP DATABASE clase_bictia;	

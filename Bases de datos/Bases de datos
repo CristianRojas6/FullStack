@@ -1,0 +1,44 @@
+BD MySql
+
+	Colección de datos interrelacionados y estructurados almacenados en conjuto
+	Soporta datos string, númericos, fecha, imagenes (blob), booleanos
+
+	MySql, SQL Server, PostgresSQL, MariaDB - Se basan en el lenguajes de scripts sql
+                                               Se conocen como gestor de Motor de datos
+
+	Base de datos relacional
+	¿WTF? O_O
+		Es aquella que permite que sus entidades (tablas) puedan compartir datos
+		y relacionarse entre ellos.
+
+
+	SELECT * FROM Estudiantes;
+  
+	idEstudiante      nombreEstduiante     idCurso
+	1                 Ximena Chivita       2
+	2                 Richard Rincon       2
+	3                 Pepe                 1
+
+	SELECT * FROM Estudiante WHERE nombreEstudiante-Chitiva';
+
+	idEstudiante      nombreEstduiante     idCurso
+	1                 Ximena Chitiva       2
+     
+	SELECT nombreEstudiante FROM Estudiante='Ximena Chitiva';
+     
+	nombreEstudiante
+	Ximena Chitiva
+
+	SSL - certificado de seguridad por parte de un servidor o servicio de hosting
+
+	XAMPP
+	software libre que nos permite tener un servidor local y una BD en la nube
+		X - Cualquier sistema operativo
+		A - Apache (compilador de PHP)
+		M - MariaDB / MySQL
+		P - PHP
+		P - Perl
+
+	WAMP - W Windows
+	MAMPP - M Mac
+	LAMP - Linux

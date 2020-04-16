@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones y eventos</title>
+</head>
+<body>
+
+    <script>
+
+        /* ------------------------Funciones----------------------------
+
+        Permiten optimizar el código, 
+        El código puede ser reutilizable en cualquier parte del programa
+        Mejora el rendimiento de miestro aplicativo
+        */
+
+        /* let a=1; b=2; c=3; d=4; e=5;
+        
+        //pedal
+        let suma = a + b;
+        console.log(suma);    //No esta mal, pero no es funcional */
+
+        /* 
+        Usando Funciones
+
+        function nombreFunción(parametro){
+            bloque de código a ejecutar
+        }
+         debe invocar la función y pasar el argumento del parámetro
+         nombreFunción(argumento)
+
+         parametro = variable con la cual la función va a trabajar
+         argumento = dato del parametro
+        */
+
+        /* let a=1; b=2; c=3; d=4; e=5;
+
+        function sumarnum(num1, num2){
+            let suma = num1 + num2
+            console.log(suma)
+        }
+
+        sumarnum(a, b);
+        sumarnum(c, d);
+        sumarnum(e, a);
+        sumarnum(4, 16); */
+
+        /*
+        scope(alcance) -> variable local y variable global
+
+           variablo local = aquella a la que podemos accerder a su respectivo
+                            valor unicamente desde el lugar de código donde
+                            se haya declarado. Acceder por fuera de su ubiación
+                            generara problemas del scope (variable not defined)
+            variable global = Aquella que podemos acceder a su contenido desde 
+                              cualquier parte del código
+            scope = regla o estandar de programación que nos indica el buen manejo 
+                    de las variables  locales y globales. Aplica para todos los lenguajes de programación
+        */
+
+        saludo = "Hola" // variable global
+
+        function decirTema(nombre){
+            let tema = 'Javascript' //variable local
+            console.log(`${saludo} ${nombre}, hoy veremos ${tema}`);
+        }
+
+        decirTema("Lorena");
+        decirTema("Kevin");
+
+    </script>
+    
+</body>
+</html>

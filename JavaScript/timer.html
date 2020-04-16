@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>timers</title>
+</head>
+<body>
+    <script>
+        /* 
+            Fechas
+            por medio de JS podemos extraer la fecha actual de nuestro pc,
+            a traves de una instancia de un nuevo objeto date()
+        */
+
+        /* let fecha = new Date();
+
+        document.write(fecha.getHours() + "<br>")//hora
+        document.write(fecha.getMinutes() + "<br>")//minutos
+        document.write(fecha.getSeconds() + "<br>")//segundos
+        document.write(fecha.getDay() + "<br>")//dia
+        document.write(fecha.getDate() + "<br>")//fecha
+        document.write(fecha.getMonth() + "<br>")//mes los trabaja en forma de arreglos
+        document.write(fecha.getFullYear() + "<br>")//año
+        document.write(fecha.getYear() + "<br>")//año Y2K = year to kilo (1000) año actual - 1900
+
+        console.log(typeof(fecha.getDay())); */
+
+
+        /* 
+        timers de JS que nos permiten ejecutar una función en un determinado tiempo
+
+        metodoTimer(función a ejecutar, tiempo expresado en milisegundos);
+
+        existen dos tipos: 
+               setTimout = ejecuta la función una vez cuando se cumpla el tiempo especificado
+
+               set interval = ejecuta la función cada vez que cumpla el tiempo especificado
+        */
+
+        /* function saludo(){
+            console.log("Hola");
+            document.write("Hola :)" + "<br>")
+        }
+
+        //setTimeout(saludo, 1000);
+
+        setInterval(saludo, 2000); */
+
+        cont = 0;
+
+        function numero(){
+            cont++;
+            document.write(`número: ${cont} <br>`);
+
+            if (cont === 5){
+                clearInterval(intervalo);
+            }
+        }
+        intervalo = setInterval(numero, 1000);
+
+
+    </script>
+</body>
+</html>
