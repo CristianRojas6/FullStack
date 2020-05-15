@@ -1,0 +1,39 @@
+use Series
+
+uno = {nombre: "Violet Evergarden", temporadas: 1, duracionCap: "45 min", plataforma: "Netflix"} 
+
+dos = {nombre: "Fate/Stay Night", temporadas: 6, duracionCap: "30 min", plataforma: "AnimeFLV"} 
+
+tres = {nombre: "Fairy Tail", temporadas: 28, duracionCap: "45 min", plataforma: "AnimeFLV"} 
+
+cuatro = {nombre: "Shokugeki no Souma", temporadas: 5, duracionCap: "30 min", plataforma: "AnimeFLV"} 
+
+cinco = {nombre: "Nanatsu no Taizai", temporadas: 3, duracionCap: "30 min", plataforma: "Netflix"} 
+
+seis = {nombre: "The Mandalorian", temporadas: 1, duracionCap: "45 min", plataforma: "Disney Plus"} 
+
+siete = {nombre: "Shingeki no Kyojin", temporadas: 3, duracionCap: "30 min", plataforma: "AnimeFLV"} 
+
+db.serie.insert( [uno, dos, tres, cuatro, cinco, seis, siete] )
+
+db.serie.find( {temporadas: {$gte: 4, $lte: 10} }, {nombre: 1, _id: 0} )
+
+db.serie.update( {}, {$set: {Genero: "Shonen"} }, {multi: true} )
+
+db.serie.find().pretty()
+
+db.serie.update( {nombre: "Violet Evergarden"}, {$set: {Genero: "Fantasia"} } )
+
+db.serie.find().pretty()
+
+db.serie.update( {nombre: "Shokugeki no Souma"}, {$set: {Genero: "Comedia"} } )
+
+db.serie.find().pretty()
+
+db.serie.update( {nombre: "The Mandalorian"}, {$set: {Genero: "Accion"} } )
+
+db.serie.find().pretty()
+
+db.serie.remove( {nombre: "The Mandalorian"} ) 
+
+db.serie.find().pretty()

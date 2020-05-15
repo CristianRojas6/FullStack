@@ -1,0 +1,99 @@
+db.juegos.update( {"juegos.nombre": "Castlevania: Symphony Of The Night"}, {$set: {"juegos.$.plataformas": ["PSX", "Sega Saturn", "Android", "iOS"] } } )
+
+db.juegos.update( {"juegos.nombre": "Contra III"}, {$set: {"juegos.$.plataformas": ["Super Nintendo", "GameBoy Advance", "Wii U", "Nintendo 3DS", "Nintendo Super System"] } } )
+
+db.juegos.update( {"juegos.nombre": "Metal Gear Solid III: Sneake Eater"}, {$set: {"juegos.$.plataformas": ["PS2", "PS3", "PS Vita", "Nintendo 3DS", "Xbox 360", "NVIDIA Shield Android TV"] } } )
+
+db.juegos.update( {"juegos.nombre": "Resident Evil 3: Nemesis"}, {$set: {"juegos.$.plataformas": ["PSX", "Compatible IBM PC", "Nintendo", "GameCube", "PS Vita", "Dreamcast", "Windows"] } } )
+
+db.juegos.update( {"juegos.nombre": "Ghosts 'n Goblins"}, {$set: {"juegos.$.plataformas": ["Arcade", "NES", "PSX", "Sega Saturn", "Game Boy Color", "ZX Spectrum", "Amstrad CPC", "Atari ST", "IBM PC", "Game Boy Advance", "Commodore Amiga", "Commodore 16", "Commodore 64", "Android", "iOS", "Emulador en Wii", "3DS", "Wii U"] } } )
+
+db.juegos.update( {"juegos.nombre": "Cadillacs and Dinosaurs"}, {$set: {"juegos.$.plataformas": ["Arcade"] } } )
+
+db.juegos.update( {"juegos.nombre": "Assassin's Creed II"}, {$set: {"juegos.$.plataformas": ["PS4", "Xbox One", "PS3", "Windows", "Xbox 360", "Mac OS"] } } )
+
+db.juegos.update( {"juegos.nombre": "Watchdogs 2"}, {$set: {"juegos.$.plataformas": ["PS4", "Xbox One", "Windows"] } } )
+
+db.juegos.update( {"juegos.nombre": "FarCry 5"}, {$set: {"juegos.$.plataformas": ["PS4", "Xbox One", "Windows"] } } )
+
+db.juegos.update( {"juegos.nombre": "Crash Bandicoot"}, {$set: {"juegos.$.plataformas": ["PSX", "PS2", "PS4", "PSP", "Game Boy Advance", "Xbox", "Nintendo GameCube", "N-Gage", "Android", "iOS", "Nintendo DS", "Wii", "Xbox 360", "Nintendo Switch", "Xbox One", "PC"] } } )
+
+db.juegos.update( {"juegos.nombre": "Uncharted 4: A Thief's End"}, {$set: {"juegos.$.plataformas": ["PS4"] } } )
+
+db.juegos.update( {"juegos.nombre": "The Last of Us"}, {$set: {"juegos.$.plataformas": ["PS3", "PS4"] } } )
+
+db.juegos.find( {"juegos.plataformas": {$in: ["PS4"]}}, {_id: 0, nombre: 1, "juegos.nombre": 1, "juegos.anio": 1} ).pretty()
+
+db.juegos.update( {"juegos.nombre": "Metal Gear Solid III: Sneake Eater"}, {$set: {"juegos.$.nombre": "Metal Gear Solid III: Snake Eater"} } )
+
+PENDIENTE ///////////////////////////////////db.juegos.find( {"juegos.anio": {$gte: 1980, $lte: 2000} }, {_id: 0, nombre: 1, "juegos.$.nombre": 1, "juegos.anio": 1} ).pretty()
+
+
+-------------------------------------------Peliculas---------------------------------------------------
+
+uno = {titulo: "Assassin's Creed", director: "Justin Kurzel", anio: 2016}
+
+dos = {titulo: "El cadaver de la novia", director: "Tim Burton", anio: 2005, actores: ["Johnny Deep", "Helena Bonham - Carter"] }
+
+tres = {titulo: "Avatar", director: "James Cameron", anio: 2005, actores: ["Sam Worthington", "Zoe Saldana", "Sigourney Weaver"] }
+
+cuatro = {titulo: "Tomb Raider", director: "Roar Uthaug", anio: 2018, actores: ["Alicia Vikander", "Dominic West"] }
+
+cinco = {titulo: "Deadpool", director: "Tim Miller", anio: 2016, actores: ["Ryan Reynolds", "Morena Bacarin"] }
+
+seis = {titulo: "El joven manos de Tijeras", director: "Tim Burton", anio: 1990, actores: ["Johnny Deep", "Winona Ryder"] }
+
+siete = {titulo: "Sin City", director: "Quetin Tarantino", anio: 2005, actores: ["Bruce Willis", "Jessica Alba"] }
+
+ocho = {titulo: "Piratas del Caribe: El cofre de la muerte", director: "Gore Verbinski", anio: 2006, actores: ["Johnny Deep", "Orlando Bloom", "Keira Knightley"] }
+
+nueve = {titulo: "El señor de los anillos: Las dos torres", director: "Peter Jackson", anio: 2005, actores: ["Orlando Bloom", "Elijah Wood", "Ian McKellen"] }
+
+diez = {titulo: "X-men: Días del futuro pasado", director: "Brian Singer", anio: 2014, actores: ["Ian McKellen", "Hugh Jackman"] }
+
+db.peliculas.insert( [uno, dos, tres, cuatro, cinco, seis, siete, ocho, nueve, diez] )
+
+db.peliculas.find( {director: "Tim Burton"} ).pretty()
+
+db.peliculas.find( {actores: "Ian McKellen"} ).pretty()
+
+db.peliculas.find( {anio: {$gt: 2013} } ).pretty()
+
+db.peliculas.find( {}, {actores: {$slice: 1 } } ).pretty()
+
+db.peliculas.update( {titulo: "Assassin's Creed"}, {$set: {actores: ["Michael Fassbender", "Marion Cotillard", "Jeremy Irons"] } } )
+
+db.peliculas.update( {titulo: "Deadpool"}, {$set: {sinopsis: "Wade Wilson es un mercenario que pasaba su tiempo en la ciudad de Nueva York protegiendo a las adolescentes de los posibles acosadores y asistía a un bar en el que los ebrios solían organizar peleas denominadas Pozos de la Muerte. Una noche en el bar, Wade conoce a Vanessa Carlysle y se convierten en novios por casi un año, durante ese tiempo deciden celebrar su amor, teniendo relaciones sexuales en todas las festividades (excepto en la Pascua de Resurrección). Cuando estaban teniendo relaciones sexuales una noche de Navidad, Wade le propone matrimonio a Vanessa, luego de repente se derrumba y es diagnosticado con cáncer terminal aligado a los pulmones, próstata y cerebro, lo que hace prácticamente imposible la operación. A pesar de que Vanessa decidió no rendirse y buscar soluciones, Wade solo quiere aprovechar el poco tiempo que le queda."} } )
+
+db.peliculas.update( {titulo: "Sin City"}, {$push: {actores: "Tim Owen"} } )
+
+db.peliculas.update( {titulo: "Assassin's Creed"}, {$set: {genero: "Aventura"} } )
+
+db.peliculas.update( {titulo: "El cadaver de la novia"}, {$set: {genero: "Fantasia"} } )
+
+db.peliculas.update( {titulo: "Avatar"}, {$set: {genero: "Ficción"}} )
+
+db.peliculas.update( {titulo: "Tomb Raider"}, {$set: {genero: "Aventura"}} )
+
+db.peliculas.update( {titulo: "Deadpool"}, {$set: {genero: "Acción"}} )
+
+db.peliculas.update( {titulo: "El joven manos de Tijeras"}, {$set: {genero: "Romance"}} )
+
+db.peliculas.update( {titulo: "Sin City"}, {$set: {genero: "Drama"}} )
+
+db.peliculas.update( {titulo: "Piratas del Caribe: El cofre de la muerte"}, {$set: {genero: "Acción"}} )
+
+db.peliculas.update( {titulo: "El señor de los anillos: Las dos torres"}, {$set: {genero: "Fantasia"}} )
+
+db.peliculas.update( {titulo: "X-men: Días del futuro pasado"}, {$set: {genero: "Superhéroes"}} )
+
+db.peliculas.update( {}, {$push: {actores: {$each: ["Juanito Alimaña", $position: 1] } } }, {multi: true} )
+
+--------------------------------------------Transmilenio--------------------------------------------------------
+
+uno= { "Portal 80 – Portal Usme": "Ruta H20 – D20", paradas: [ {"Portal80":{"alimentadorPortal80": [{"1-1": "Álamos"}, {"1-2": "Garcés Navas"}, {"1-3": "Villas de Granada"}, {"1-4": "Cortijo"}, {"1-5": "Colsubsidio"}, {"1-6": "Bolivia Oriental"}, {"1-7": "Quirigua"}, {"1-8": "Calle 80"}, {"1-9": "Villas del Dorado"} ] } }, "Avenida Cali", "Granja – Carrera 77", "Boyacá", "Ferias", "Avenida 68", "Polo", "Calle 45", "Calle 34", "Calle 26", "Calle 19", "Avenida Jiménez", "Calle 40 Sur", "Santa Lucía", "Molinos", {"PortalUsme": {"alimentador portal Usme": [ {"3-1": "La Aurora"}, {"3-2": "Santa Librada"}, {"3-3": "Chuniza"}, {"3-4": "Alfonso López"}, {"3-5": "Usminia"}, {"3-6": "Danubio"}, {"3-7": "Avenida Caracas"}, {"3-8": "Virrey"}, {"3-9": "Marichuela"}, {"3-10": "Usme Centro"}, {"3-11": "La Fiscala"}, {"3-13": "Nebraska"} ] } } ] }			
+				
+db.transmilenio.insert( {uno} )				
+				
+				
+				

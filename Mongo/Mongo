@@ -1,0 +1,228 @@
+MongoDB
+	->Base de datos No relacional(NoSQL)
+	->Se basa en el lenguaje de JavaScript
+	->Open Source
+	->Es una base de datos flexible
+	
+¿Qué quiere  decir NoSQL?
+	Su formato no corresponde al formato tradicional de tablas como lo hace una bd relacional
+	como SQL, MySQL, etc. Al no existir tablas tampoco existen las relaciones (MER)
+	
+{
+	"_id":ObjectID(ksjfkjdjknsdk),
+	"nombreSerie" "Los Simpsons",
+	"temporadas"[
+		{
+			"temporada1":20cap,
+			"duraciónCap":20min,
+			"tiempoEspera":1año
+		}
+		{
+			"temporada2":20cap
+		}
+	]
+}
+{
+	"_id":ObjectID(ueuiahfkas),
+	"nombreSerie" "Rick & Morty",
+	"temporadas"[
+		{
+			"temporada1":10cap
+		}
+}
+
+
+	Al no tener la estructura de tablas, en una bd NoSQL como Mongo, estas se llaman 		colecciones y cada registro existente, en Mongo se le conoce como documento.
+	
+	Como no existe una relación entre tablas, Mongo las reemplaza por medio de anidación 	de JSON. Esto se conoce como subdocumento.
+	
+	Al no existir tablas, Mongo maneja los documentos por medio de JSON, dejando de lado 	que existan datos con valor null a menos de que nosotros deseemos
+	
+El id de Mongo, se genera automáticamente cuando existe un registro. Nosotros podemos crear nuestros propios ID's pero el id que genera Monogo por defecto ya consta de un String de 24 caracteres alfanumeicos. _id: ObjectID();
+
+
+4 -> timespan
+3 -> proceso interno de la máquina
+2 -> hash (encriptación)
+3 -> dato autoimcrementable de Mongo
+
+12 bytes
+
+En el disco se debe crear una carpeta llamada data y dentro de este se debe crear una carpeta llamada db. Acá es donde se guardarán lobson de nuestra bd Mongo
+
+/data/db
+
+show dbs -> muestra las bases de datos
+
+show collections -> muestra las colecciones creadas
+
+use nombreBD -> crear base de datos (forma1) tener en cuenta los nombres y conexiones declarados
+se pueden declarar variables como en JS documento = {valores tipo JSON}, se puede sobreescribir el dato de la variable pero antes de guardar en la base de datos.
+
+colecciones(mongo) = tablas(SQL)
+
+Registrar un documento
+
+db.coleccion.insert(parametro, la variable creada)
+
+db.coleccion.insert(se puede escribir directamente el JSON)
+
+db.prueba.find().pretty() -> para buscar lo que parametros hay en las colecciones
+
+db.coleccion.insert( [Se guardan variables de forma masiva como arreglos] )
+
+db.coleccion.insert( {Se guardan los JSON, esto es un JSON anidado} )
+
+db.coleccion.find( {nombre: "Carlos"} ).pretty() -> consultas de documentos
+
+db.coleccion.find( {nombre: {$ne: "Carlos"} } ) -> discrimina los valores especificados, en los documentos
+
+db.coleccion.find().count() -> para saber cuantos parametros tiene la coleccion
+
+db.coleccion.find().sort( {documento: -1} ).pretty() -> orden ascendente o decendiente, depende del caso si el número de las notas es 1 o -1 como en el ejemplo
+
+//Mostrar x documentos
+db.coleccion.find( {documento} ) -> si dejamos el campo de documentos vacío, traera todos los documentos de la coleccion
+
+//Que campos queremos que sean visibles
+db.coleccion.find( {documento}, {parametro: 1 o 0} ) -> que parametros queremos que aparescan, booleano
+
+
+Existen 4 operadores
+$gt -> greater than (mayor que)
+$gte -> greater than equals (mayor o igual que)
+$lt -> less than (menor que)
+$lte -> less than equals (menor o igual que)
+
+db.coleccion.find( {documento: {$gt: 3} } ) -> indicamos que en la coleccion indicada se muestren los documentos mayores a 3
+
+db.coleccion.find( {documento: {$gte: 2, $lte: 4} } ) -> indicamos que nos muestre valores separados por comas
+
+db.coleccion.find( {documento: {$gte: 2, $lte: 4} }, {documento 2: 1, _id: 0} ) -> discrimina los demas documentos especificados
+
+//Actualizar un documento
+db.coleccion.update( {documento: "parametro"}, {$set: {newDocumento: "parametro"} } ) -> en caso de que haya varios documentos con el mismo nombre se puede discriminar con el id
+
+db.coleccion.update( {documento1: "parametro"}, {$set: {documento1: newparametro} } ) -> modifica un parametro en un mismo documento
+
+db.coleccion.update( {documento: "parametro"}, {$unset: {documento: parametro} } ) -> elimina un parametro especificado
+
+//Actualización multiple
+db.coleccion.update( {}, {$set: {newdocumento: parametro} }, {multi: true} ) -> en caso de que no este el multi solo se modifica el primer documento
+
+db.coleccion.remove( {documento: parametro} ) -> elimina el documento completo de la db
+
+db.coleccion.drop() -> eliminar coleccion
+NOTA: Tener en cuenta un backup de la base de datos
+
+db.dropDatabase() -> eliminar la base de datos
+NOTA: Tener en cuenta un backup de la base de datos
+
+//CRUD de arreglos
+
+arreglo = [1, 2, 3]
+
+documento = {nombre: "Cristian F", datos: arreglo}
+
+db.usuarios.insert(documento)
+
+db.usuarios.find().pretty()
+
+db.usuarios.insert( {nombre: "Camilo P", datos: [1, 2, 3]} )
+
+db.usuarios.update( {nombre: "Cristian F"}, {$push: {datos: 4} } ) -> insertar datos en el arreglo de datos
+
+db.usuarios.update( {nombre: "Cristian F"}, {$addToSet: {datos: 5} } ) -> verifica si el valor escrito ya existe en el documento, si existe no escribe nada, sino lo crea
+
+db.usuarios.update( {nombre: "Camilo P"}, {$push: {datos: {$each: [4, 5, 6] } } } ) -> ciclo para que agregue los varoles
+
+db.usuarios.update( {}, {$push: {datos: {$each: [-1, 0], $position: 0} } } ) -> insertar datos en la posicion correspondiente 
+
+db.usuarios.find( {}, {datos: {$in: [6] } } ) -> consulta dentro de arreglo al tener los corchetes vacios en la primera posición significa que va a buscar en todos los documentos y así mismo imprimirlos
+
+//CRUD SubDocumentos - equivalente del MER
+
+Se crea una variable y una documento normal con sus parametros (documento dentro de documento)
+
+Uno a Uno
+
+foma 1
+subdocumento = {nombre: "BICTIA", cursos: {web: "fundamentos"} } -> tiene un objeto JSON en uno de sus valores
+
+forma 2
+
+nuevo = {nombre: "BIT"} se crea la variable que contiene el nombre del documento
+
+subdocumento = {web: "fullstack"} creamos la variable que contenga el subdocumento
+
+nuevo.cursos = subdocumento //se "juntan" el documento en la coleccion y el subdocumento
+
+db.clase.insert(nuevo)
+
+db.clase.find().pretty()
+
+//Consulta
+
+db.clase.find( {"cursos.web": "fullstack"} )  tenemos que especificar en qué documento y junto a esto el nombre del subdocumento y luego su valor
+
+//Actualizar subdocumento
+
+db.clase.update( {nombre : "BICTIA"}, {$set: {"cursos.web": "python"} } )
+
+//Eliminar subdocumento
+
+db.clase.remove( {"cursos.web": "fullstack"} ) elimina el documento con lo que se especifica
+
+db.clase.update( {nombre: "BICTIA"}, {$unset: {"cursos.web": 1} } ) -> solo se elimina el subdocumento especificado
+
+uno a muchos / muchos a muchos
+
+documento = {nombre: "Falcao"} se crea el documento "padre"
+
+uno = {nota_html: 5} los subdocumentos que van "unidos" con el documento padre
+
+dos = {nota_css: 3}
+
+tres = {nota_js: 1}
+
+documento.materias = [uno, dos, tres] guardar como array los subdocumentos en el documento principal y un nuevo documento
+
+db.clase.insert(documento)
+
+//consulta
+
+db.clase.find( {materias: {$elemMatch: {nota_html: 5} } } ).pretty()
+
+db.clase.find( {"materias.nota_html": 5}, {_id: 0, "materias.$": 1} ).pretty() -> el signo .$ es para hacer referencia al campo mencionado anteriormente (nota_html)
+
+//Actualizar dentro de un arreglo
+
+db.clase.update( {"materias.nota_html": 3}, {$set: {"materias.$": {nota_html:5} } } )
+
+
+Crear una coleccion de series
+nombreSerie, cantidad temporada, duraciónCapitulo, plataformaTransmision
+Agregar series (Mínimo 7)
+consultar Series (cantidadTemporadas 4 - 10, mostrar solo el nombre)
+Actualizar series (agregar campo Genero)
+Eliminar series (eliminar la serie que quiera)
+
+
+mongodump - permite hacer el backup a una base de datos 
+mongoexport - permite exportar un documento o una colección a nuestra base dedatos 
+mongoimport - permite importar un documento o una coleccion 
+mongorestore - restaurar o recuperar nuestra base de datos 
+
+
+Crear una nueva coleccion estudiantes
+agregar mínimo 5 compañeros del salon
+nombre
+apellido
+edad
+intereses: [] o [ {} ] o {}
+lenguajes: [ {nombre: }, {instituto: } ]
+idiomas: []
+
+db.juegos.update ( {}, {$unset: {plataforma: 1} }, {multi: true} )
+
+

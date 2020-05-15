@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"Estudiantes.usuarios"}],"uuid":"c7cea6ecc94e445c947b2a1cbc463f3f"}

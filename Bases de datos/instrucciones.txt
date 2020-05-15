@@ -1,0 +1,34 @@
+Va de la mano con el trabajo de POO
+1) Definir la estructura de la base de datos
+	cantidad de tablas
+	los datos de cada tabla
+	las relaciones necesarias entre tablas
+
+2) Organizar nuestras carpetas de acuerdo al patrón 
+	MVC (Modelo Vista Controlador)
+	Definimos los modelos
+		**existira un modelo por cada tabla
+	definimos los controladores
+	definimos las vistas
+		** van de acuerdo a lo que se estipule
+		con el cliente
+
+3) Iniciamos la contrucción del modelo a usar
+	** El modelo requiere la conexión a la BD
+	** Toda clase debe tener un constructor así 
+		éste se encuentre vacío o no
+	**definir los métodos que necesitemos
+		definios únicamente los nombres de los
+		métodos necesaios pero vamos 
+		desarrollandolos de form individual
+
+	3.1) El contenido de un método
+		**instancia de la conexión 
+		**la sentencia a ejecutar de mysql
+
+4)Dependiendo de las necesidades, podemos crear 
+	primero la vista requerida o el control.
+	En el caso de  una inserción, haremos
+	primero la vista
+
+5)Crear las funciones del controlador

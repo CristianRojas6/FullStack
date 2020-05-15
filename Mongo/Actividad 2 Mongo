@@ -1,0 +1,94 @@
+use Estudiantes
+
+uno = {nombre: "Johanna",
+       apellido: "Perez", 
+       edad: 26, 
+       intereses: ["programar", "cocinar", "enseñar", "viajar"], 
+       lenguajes: [ {nombre: "Visual Basic", instituto: "Colegio"}, 
+       	    {nombre: ".asp.net", instituto: "UNAD"}, 
+       	    {nombre: "Linux", instituto: "UNAD"}, 
+       	    {nombre: "JAVA", instituto: "Andes"}, 
+       	    {nombre: "Python", instituto: "Andes"}, 
+       	    {nombre: "Matlab", instituto: "Andes"}, 
+       	    {nombre: "FullStack", instituto: "BICTIA"} 
+       	    ], 
+	idiomas: ["Español", "Ingles", "Aleman"] 
+}
+
+dos = {nombre: "Lorena",
+       apellido: "Sanchez", 
+       edad: 27, 
+       intereses: ["viajar", "redes moviles", "bailar"], 
+       lenguajes: [ {nombre: "SQL", instituto: "UDEMY"}, 
+       	    {nombre: "JavaScript", instituto: "BICTIA"},  
+       	    ], 
+	idiomas: ["Español", "Ingles"] 
+}
+
+tres = {nombre: "Daniel",
+       apellido: "Sanchez", 
+       edad: 22, 
+       intereses: [ {deporte: "ciclismo"}, {deporte: "jugging"}, {videojuegos: "FIFA"},  {videojuegos: "CS:GO"} ], 
+       lenguajes: [ {nombre: "C" , instituto: "universidad Sergio Arboleda" },
+		     {nombre: "C++" , instituto: "universidad Sergio Arboleda" },
+		     {nombre: "Python" , instituto: "universidad Sergio Arboleda" },
+		     {nombre: "Java" , instituto: "universidad Sergio Arboleda" },
+		     {nombre: "JavaScript" , instituto: "Empirico" },
+		     {nombre: "PHP" , instituto: "BICTIA" },
+		     {nombre: "SQL" , instituto: "BICTIA" },
+		     {nombre: "Mongo" , instituto: "BICTIA" },
+		   ], 
+	idiomas: ["Español", "Ingles"] 
+}
+
+cuatro = {nombre: "Kamilo",
+	apellido: "Munevar", 
+	edad: 29, 
+	intereses: [ "videojuegos", "futbol", "boxeo", "cerveza", "dibujar", "musica" ], 
+	lenguajes: [ {nombre: "PHP", instituto: "empirico" },
+		     {nombre: "sass", instituto: "empirico" },
+		     {nombre: "less", instituto: "empirico" },
+		     {nombre: "Java", instituto: "BIT" },
+		     {nombre: "JavaScript", instituto: "empirico" },
+		     {nombre: "Angular", instituto: "empirico" },
+		     {nombre: "React", instituto: "empirico" },
+		     {nombre: "Mongo", instituto: "empirico" },
+		     {nombre: "Node & Express" , instituto: "empirico" },
+		     {nombre: "C", instituto: "empirico" },
+		     {nombre: "C++", instituto: "empirico" },
+		     {nombre: "C#", instituto: "empirico" },
+		   ], 
+	idiomas: ["Español", "Ingles"] 
+}
+
+cinco = {nombre: "Mario",
+	apellido: "Laverde", 
+	edad: 29, 
+	intereses: [ "videojuegos", "guitarra", "leer", "cocina" ], 
+	lenguajes: [ {nombre: "PHP", instituto: "EMLAZE S.A.S" },
+		     {nombre: "sass", instituto: "empirico" },
+		     {nombre: "less", instituto: "empirico" },
+		     {nombre: "Java", instituto: "BIT" },
+		     {nombre: "JavaScript", instituto: "EMLAZE S.A.S" },
+		     {nombre: "Angular", instituto: "empirico" },
+		     {nombre: "React", instituto: "empirico" },
+		     {nombre: "Mongo", instituto: "empirico" },
+		     {nombre: "SQL", instituto: "EMLAZE S.A.S" },
+		     {nombre: "CSS", instituto: "EMLAZE S.A.S" },
+		     {nombre: "C++", instituto: "ETITC" },
+		     {nombre: "C#", instituto: "ETITC" },
+		   ], 
+	idiomas: ["Español", "Ingles"] 
+}
+
+
+db.usuarios.insert( [uno, dos, tres, cuatro, cinco] )
+
+db.usuarios.find( {"lenguajes": {$elemMatch: {instituto: "BICTIA"} } }).pretty()
+
+db.usuarios.find( {"idiomas": "Ingles"}).pretty()
+
+db.usuarios.update( {"lenguajes.nombre": "SQL"}, {$set: {"lenguajes.$": "python"} } )
+
+db.usuarios.find( {}, {nombre: 1, apellido: 1, "lenguajes.instituto": 1, _id: 0} )
+

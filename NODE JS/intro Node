@@ -1,0 +1,109 @@
+Node JS
+
+	-> Es un entrono de plataforma que nos permite manejar o ejecutar el lenguaje 
+		JS del lado del servidor, es decir, JS como lenguaje backend
+	-> Su lenguaje base es JS
+	
+	-> Su naturaleza es programación asincrona o no bloqueante
+		¿Qué quiere decir programación asincrona?
+			El lenguaje puede realizar muchas tareas al mismo tiempo
+			ya que entiende que cada tarea tiene un tiempo de
+			desarrollo totalmente diferente:
+				(NodeJS, ExpressJS, JQuery, AJAX)
+			
+			El fundamento de la programación asíncrona consta de
+			las funciones callbacks. Estas son funciones 
+			que se pasan como parámetros de un método u otra función.
+			
+			Las hemos utilizado en SerInterval, SetTimeout
+			El uso de eventos.
+			
+			agregarDivs('click', function(){
+				ejecutar lógica
+			})
+			
+		Existe la programación síncrona o bloqueante (PHP, JAVA) la cual no permite
+		seguir ejecutando la cadena de tareas hasta que la tarea anterior se haya completado.
+		
+	
+	1) Compilador
+	2) Sintaxis
+	3) Framework
+	4) Librerías
+	
+	--------------------------------------------------------------------------------
+		Node        |		PHP			|	python	
+	--------------------------------------------------------------------------------
+		V8          |		Apache			|	Anaconda
+		JS          |		PHP			|	python
+		Express     |		Laravel		|	Django
+		Módulos     |		Librerías standar	|	Librerías standar
+	
+	
+	NPM  
+		Inicialmente sus sigles significaban Node Package Manager, actualmente, los mismos
+		creadores de NPM se expandieron abarcando ahora todos los paquetes, librerias,
+		frameworks para JS siendosus siglas ahora motivo de trolleo para sus creadores
+		
+		
+		
+Package.json
+
+	-> Es un archivo de configuración de nuestro aplicativo en el cual se van a guardar todas las
+	dependencias (paquetes, frameworks, dependencias, librerías, etc) que nuestro proyecto necesite.
+	
+	-> Se crea a partir del comando npm init -y ()
+	
+	"name": Nombre del proyecto / no debe tener mayúsculas, ni espacios y recomendable que no tenga
+	el mismo nombre que la carpeta raíz o dependencia.
+	
+	"version": version de nuestro aplicativo
+	"description": Descripción del aplicativo, proyecto o libreriaque estemos dearrollando
+	"main": Indica cuál es el archivo raíz o principal de la aplicación a la hora de ejecutarlo
+	"scripts": hace referencia a una serie de comandos que nosotros podemos configurar
+	"keywords" Palabras claves de busqueda para encontrar nuestro aplicativo si éste se encuentra en una nube
+	"author": Quienes desarrollaron el proyecto
+	"dependencies": librerias, paquetes, frameworks que instalamos para mayor robustez y funcionalidad de nuestro aplicativo
+	
+Semver -> Semantic Varsioning
+	(1.0.0)
+		*Major -> cambios sustanciales de nuestro aplicativo que incluso pueden generar problemas de compatibilidad
+		con versiones anteriores
+		*Minor -> Expansiones de nuestro aplicativo que no van a afectar la compatibilidad de versiones
+		*Patch -> Solucionar errores o bugs que hubo en nuestro aplicativo
+	
+Instalar express
+	npm install express --save
+
+Formas de instalación
+	*Unica - npm install nombre_paquete (instalación temporal)
+	*Global - npm install nombre_paquete -g (funcionara unica y exclusivamente en nuestro equipo)
+	*Dependencia de proyecto - npm install nombre_paquete --save (Se instalar declarando en el package.json como dependencia)
+	
+	Se considera una dependencia de proyecto cuando nuestro aplicativo necesita si o si una funcionalidad de
+	alguna libreria, paquete, framework, herramienta externa, etc
+		ej: mongoose(conectar node con mongo)
+			express
+			bcript (encriptar datos)
+			connect-multiparty (enviar archivos a una bd)
+	*Dependencia de desarrollo - npm install nombre_paquete --save-dev (Se instalar declarando en el package.json como
+	dependencia de desarrollo cuando se requiere alguna herramienta que ayude o mejore las habilidades o tiempos del
+	desarrollador sin afectar las funcionalidades del aplicativo)
+		ej. nodemon(refrescar automaticamente el servidor)
+		
+Express 
+	Framework minimalista de NodeJS, sencillo, simple, flexible que acopla a las necesidades del proyecto
+	
+	Para qué usamos express:
+		*manejo de rutas
+		*paso de parámetros
+		*validaciones de sesión de usuarios
+		*cookies
+	No se usa express para:
+		*Temas de seguridad
+		*Organización del código
+		*Manipular la BD
+	Su funcionamiendo se basa en los middlewares. Es un fragmento de código que se ejecuta entre la petición que 
+	hace el cliente y la respuesta que da el servidor
+	
+	

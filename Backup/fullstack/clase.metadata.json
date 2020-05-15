@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"fullstack.clase"}],"uuid":"bbdb17eda4f845a28b9827589b0aa4a2"}
