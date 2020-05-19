@@ -1,0 +1,61 @@
+ANGULAR 
+
+	debemos tener instalado nodejs para tener acceso a npm
+	Comando de instalación de Angular
+	npm install -g @angular/cli@latest
+	ng -v
+	ng --version
+	
+	Would you like to... Google privacy politics? (s/n) n
+	
+	CLI -> commando line interface. Nos provee una serie de librerías y paquetes 
+	propios de Angular para poder ejecutar correctamente un proyecto. 
+	A su vez nos brinda una serie de comandos para crear componentes desde la consola
+	
+	Framework Fronted de JavaScript cuya sintaxis se basa en TypeScript, que nos permite crear SPA (Single Page Aplication).
+	Es creado por Google, maneja MVC o MVW (Model, View, Whatever) a partir de componentes (Cada elemento HTML que creamos).
+	
+	* Es mucho más robusto que Vue y React
+	* Se utiliza para proyectos de gran escalabilidad debido a su robustez y el manejo de MVC
+	* Ideal para mantenimiento y creación de aplicativos web tipo onepage, landingpage.
+	* Permite crear plantillas de forma eficaz gracias al comando de CLI
+	* Angular ejecuta la vista (renderiza) desde cualquier tecnología backend como php, java
+		node, .net, etc consumiendo "servicios". Angular renderiza de mejor manera y más óptima
+		cada interfaz.
+	
+	¿Qué es TypeScript?
+	Es un superconjunto basado en JavaScript. Podemos definirlo como una expansión de JS
+	que nos permite controlar el tipo de datos de nuestra lógica (variables, parámetros) y
+	manejar POO de forma más eficaz.
+	.ts compila directamente a un archivo .js
+	
+	Ventajas
+		-Fuertemente tipado
+		
+		//JavaScript		//TypeScript
+		
+		var nombre		var nombre : any
+		var unidad = 10	var unidad : Number = 10
+		
+		-Los errores en TS se muestran en desarrollo en la consola del editor de código 
+		mientras que los errores de JS se muestran en producción en la consola
+		del navegador
+		
+		
+	Crear nuestro primer proyecto de Angular
+		ng new primer-clase
+		
+	Inicializar el servidor
+	
+		->ng serve 
+		->ng serve --open 
+		->npm start 
+	Angular 7 ->
+	Creación de componente (manual / comando)
+	Data Binding (interpolación de datos - string interpolation
+			one way
+			two way)
+	template variable
+	directivas (*ngif, *ngfor, *ngswitch)
+	servicios
+	rutas
