@@ -1,0 +1,46 @@
+API
+  Application Programing Interface / Interfaz de Programación de Aplicaciones
+  Arquitectura que permite a un desarrollador interactuar con los datos de una
+  aplicación de forma organizada.
+
+  Esta aplicación se encuentra alojada en la nube (IBM Cloud, AWS, etc) estando
+  totalmente disponible para su consumo por parte de cualquier cliente
+  (una aplicación frontend como lo puede ser una desarrollada en Angular)
+
+  Un ejemplo de API es el inicio de sesión a través de una red social o cuenta
+  de correo; una app de geolocalización que consume la API de google maps.
+
+REST
+  Representational State Transfer (Transferencia de Estado Representacional).
+  Arquitectura de diseño de aplicaciones en redes. Ofrece tecnologías complejas
+  a partir de los protocolos HTTP y HTTPS (HyperText Transfer Protocol)
+
+API REST se caracteriza por manejar la información en formato JSON, ya que es un formato
+de texto sumamente ligero, compatible con cualquier lenguaje de Programación.
+
+Vamos a crear una API que se encargará de
+  crear una tarea
+  consultar todas las tareas
+  actualizar tareas
+  eliminar tareas
+  La API la crearemos usando Mongo
+
+
+
+
+
+Debemos inicializar node: npm init -y
+Instalamos Express: npm install express -save
+Instalamos mongoose: npm install mongoose --save
+Instalamos nodemon: npm install nodemon --save-dev
+
+index.js se encarga de la lógica del servidor
+app.js se encarga de la lógica de Express
+
+
+CORS
+	Cross-Origin Resource Sharing (Intercambio de Recursos de Origin Cruzado).
+	Mecanismo que utiliza las cabeceras de http para otorgar permisos a terceros
+	para consumir recursos que provengan de otro servidor. (put, post, get, delete)
+	
+	npm install cors --save

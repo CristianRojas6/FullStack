@@ -1,0 +1,72 @@
+TIPS DISEÑO WEB
+
+-Pensar en qué no nos gusta de un sitio web (contaminación visual, sobrecarga de anuncios, sobrecarga de banners, etc)
+	
+-Facil lectura del texto, combinación de colores, tamaño de la fuente, máximo tres fuentes, PERO 
+	recomendable usar solo dos fuentes tipográficas.
+	(Derivaciones de la misma familia de fuentes - jugar con la negrilla, la cursiva
+	de la fuente tipográfica)
+	
+-Colocar los elementos esenciales en el costado superior derecho de la pantalla
+	El ojo humano lee de arriba a abajo y de izquierda a derecha
+	El cerebro le da la indicación al ojo de leer en forma de Z o un formato de lectura en F
+	
+-Consistencia & coherencia
+	Mantener el flujo, la estructura en todas las páginas del sitio web
+	
+-Navegación
+	El usuario no debe hacer más de tres pasos para lograr su cometido final en la aplicación
+	A menor cantidad de pasos y mayor sencillez en ellos, mejor la experiencia de usuario
+
+-Contenido Adecuado
+	Puntuación, redacción, buena ortografia 
+
+-Nunca suponer, siempre preguntar qué desea el cliente
+
+-Pensar en una estructura que sea facil de actualizar
+
+-Carga 
+	Si el tiempo de carga es superior a 3 segundos, la probabilidad de abandono
+	aumenta un 35%
+	Comprimir las imágenes, evitar enlaces rotos, carga correcta de los elementos
+	multimedia.
+
+-Tendencias en el diseño web
+
+-Mantener al usuario en nuestra página
+	Enlaces externos como publicidad, redes sociales y demás deben abrirse
+	en otra pestaña, de lo contrario el usuario se desentiende de nuestro sitio web 
+	y perdemos a un potencial consumidor
+
+-Jerarquia visual
+	Poco texto, información concisa y apoyo visual.
+	Ayuda al usuario a buscar con mayor rápidez en nuestro sitio web,
+	mientras la búsquedda sea más lenta, pero será la experiencia de usuario.
+	Mantener la organización vertical.
+
+-Respetar los espacios
+	Tener los espacios en blanco colocados acertivamente ayuda a que el sitio web 
+	respire, sea más limpio y centre más la atención del usuario.
+	Tener en cuenta el espacio entre las letras o caracteres de una tipografía
+	y el espacio entre los títulos.
+
+-Un buen desarrollador fronted no solo se limita al conocimiento y manejo de los
+lenguajes, sino también debe familiarizarse con herramientas de diseñadores
+gráficos, es decir, Photoshop, Ilustrator, Corel Draw, GIMP, Krita, Adobe XD
+
+-Igualar el diseño reflejando en el mockup más no superarlo 
+
+-Colores
+	Elegir colores cromáticos entre 1 - 3 primarios y 1 - 3 secundarios
+	Estos puedan contrastarse y complementarse
+	El contenido principal o que deseemos destacar debe ir en una tonalidad 
+	primaria y los adornos o ayudas visuales a resaltar, se hacen con un 
+	color secundario.
+	Con un fondo vívido, las tipografías delgadas deben ser resaltadas.
+	Ajustar el brillo de una tonalidad ayuda a crear contraste, sirve para
+	dar mayor intensidad partiendo de una misma tonalidad
+	
+	Paletton
+	adobe.color
+	htmlcolorcode
+	colour.de

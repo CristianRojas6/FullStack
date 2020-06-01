@@ -59,3 +59,58 @@ ANGULAR
 	directivas (*ngif, *ngfor, *ngswitch)
 	servicios
 	rutas
+
+Buenas practicas
+
+	ordenar en angular con el nombre de lo que se va a realizar ya que vamos a tener muchos archivos
+	ej.
+		.components.html, .components.css, etc
+
+pasos
+
+1) Crear la carpteta components y dentro de ella un crear los componentes
+	.components.html, .components.css & components.ts
+
+2)Crear la estructura del .components.html
+	configurar el archivo .ts
+
+	2.1) Se declara el nombre de la meta etiqueta que se encargará de renderizar 
+		el html del componente (atributo selector)
+		Se indica  la plantilla o estructura de html a utilizar (atributo tamplateUrl)
+		Se indican los estilos que el componente utilizará (atributo stylesUrls)
+	
+	2.2)Exportamos el componente como una clase, respetando el UpperCamelCase
+
+3) Nos dirigimos al archivo app.modules.ts donde debemos importar el componente,
+	e indicarle su respectiva declaración. Al ser un componente, debe ser 
+	anexado al arreglo declarations
+
+4) Agregar la meta etiqueta  del componente que hemos creado al componente principal
+	o al componente que deseemos que lo contengan.
+
+
+inicio
+genero
+
+	rock
+	regaae
+	pop
+contacto
+
+Estando ubicados en la carpeta del proyecto de angular (primera-clase)
+Debemos tumbar el servidor
+
+ng generate component components/genero
+ng generate component components/rock
+ng generate component components/regaae
+ng generate component components/pop
+ng generate component components/contacto
+
+ng generate c carpeta/componente
+
+ng destroy component carpeta/componente  //Si no funciona toca eliminarlo manualmente
+
+Decorador -> Recibe un JSON que se encarga de recibir y configurar 
+			las caracteristicas de un componente
+
+Que es el actionscript?
