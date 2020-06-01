@@ -1,0 +1,35 @@
+#container{
+    background-image: url(../../../assets/img/registro.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 1312px;
+    height: 600px;
+}
+
+
+#formulario{
+    background-color: blue;
+    border: white solid 2px;
+    border-radius: 20px;
+    padding: 17px;
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.8;
+}
+
+input{
+    width: 100%;
+    height: 30px;
+    border-radius: 8px;
+    margin: 3px;
+}
+
+textarea{
+    width: 100%;
+    height: 90px;
+    border-radius: 8px;
+    margin: 3px;
+}

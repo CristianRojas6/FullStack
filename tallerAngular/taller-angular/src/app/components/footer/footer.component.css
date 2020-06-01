@@ -1,0 +1,18 @@
+@font-face{
+    font-family: "Font Wonderland";
+    src: url(/src/assets/alice_in_wonderland/Alice_in_Wonderland_3.ttf);
+}
+
+#contenedor p{
+    font-family: "Font Wonderland";
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+
+#contenedor{
+    position: absolute;
+    background-color: transparent;
+    display: flex;
+    flex-wrap: wrap;
+}

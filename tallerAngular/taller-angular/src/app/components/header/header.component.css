@@ -1,0 +1,38 @@
+.container{
+    padding: 0 20px 0 20px;
+}
+
+header{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.navbar{
+    background-color: transparent;
+    position: absolute;
+}
+
+@font-face{
+    font-family: "Font Wonderland";
+    src: url(/src/assets/alice_in_wonderland/Alice_in_Wonderland_3.ttf);
+}
+
+header h1,
+header a {
+    color: #ff00e9;
+    font-family: "Font Wonderland";
+    text-decoration: none;
+    font-size: 2.2rem;
+}
+
+
+
+
+    
+
+
+
+
+
